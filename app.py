@@ -6,9 +6,9 @@ import shap
 import matplotlib.pyplot as plt
 
 st.set_page_config(
-    page_title="PulseWatch | Burnout Prediction",
+    page_title="PulseWatch",
     page_icon="🔥",
-    layout="wide",
+    # layout="wide",
     initial_sidebar_state="expanded"
 )
 
@@ -111,32 +111,32 @@ def get_explainer(_model):
 
 explainer = get_explainer(model)
 
-st.title("🔥 PulseWatch: Employee Burnout Predictor")
+st.title("PulseWatch: Employee Burnout Predictor")
 st.markdown("""
-**Welcome to PulseWatch!** 👋  
+**Welcome to PulseWatch!**
 This tool helps HR professionals, managers, and individuals predict if an employee is at risk of burnout. 
 You don't need to be a data scientist to use it! Just adjust the sliders on the left to match an employee's typical day, and our AI will calculate their burnout risk and explain exactly *why* it made that decision.
 """)
 
-st.sidebar.header("📊 Employee Profile")
+st.sidebar.header("Employee Profile")
 st.sidebar.markdown("Slide the dials to match the employee:")
 
 # Move the button to the TOP so it's always visible regardless of screen size!
-predict_btn = st.sidebar.button("Predict Burnout Risk 🚀")
+predict_btn = st.sidebar.button("Predict Burnout Risk")
 st.sidebar.markdown("---")
 
-with st.sidebar.expander("👤 Personal & Rest", expanded=True):
+with st.sidebar.expander("Personal & Rest", expanded=True):
     age = st.number_input("Age", min_value=18, max_value=65, value=30, step=1)
     exp = st.number_input("Experience (years)", min_value=0, max_value=40, value=5, step=1)
     sleep_h = st.slider("Sleep (hours/night)", min_value=3.0, max_value=12.0, value=7.0, step=0.5, help="Average hours of sleep per night")
     exercise = st.slider("Exercise (hours/day)", min_value=0.0, max_value=5.0, value=0.5, step=0.5)
 
-with st.sidebar.expander("💼 Work Habits", expanded=True):
+with st.sidebar.expander("Work Habits", expanded=True):
     work_h = st.slider("Daily Work (hours)", min_value=2.0, max_value=16.0, value=8.0, step=0.5, help="Actual hours spent working per day")
     screen = st.slider("Screen Time (hours/day)", min_value=2.0, max_value=18.0, value=9.0, step=0.5)
     meetings = st.number_input("Meetings per day", min_value=0, max_value=15, value=2, step=1)
 
-with st.sidebar.expander("💻 Coding & Stress", expanded=True):
+with st.sidebar.expander("Coding & Stress", expanded=True):
     commits = st.number_input("Code Commits/day", min_value=0, max_value=50, value=5, step=1, help="How much code they deliver daily")
     bugs = st.number_input("Bugs Fixed/day", min_value=0, max_value=30, value=3, step=1, help="Debugging can be a major source of frustration")
     caffeine = st.number_input("Caffeine (Cups/day)", min_value=0, max_value=15, value=2, step=1)
@@ -207,7 +207,7 @@ if predict_btn:
             st.caption(f"{np.max(proba)*100:.1f}% confidence")
             
         with colB:
-            st.subheader("🧠 Why was this predicted?")
+            st.subheader("Why was this predicted?")
             st.info("""
             **How to read this chart:**
             - Look at the **bottom** to see where the prediction started, and the **top** to see where it ended.
@@ -235,9 +235,9 @@ if predict_btn:
             st.pyplot(fig)
 
 else:
-    st.info("👈 Adjust the employee profile on the left and click 'Predict' to see the model in action.")
+    st.info("Adjust the employee profile on the left and click 'Predict' to see the model in action.")
     
-    st.markdown("### 💡 Try these scenarios:")
+    st.markdown("### Try these scenarios:")
     col1, col2, col3 = st.columns(3)
     with col1:
         st.markdown("**The Overworked Coder**")
