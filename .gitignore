@@ -1,0 +1,20 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Plot images generated during training (don't upload to web app repo)
+*.png
+
+# Note: We specifically DO NOT ignore *.pkl because Streamlit needs them!
+# Note: We specifically DO NOT ignore Dataset folder in case you want it uploaded.
