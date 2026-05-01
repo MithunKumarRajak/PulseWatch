@@ -1,20 +1,37 @@
-# Byte-compiled / optimized / DLL files
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
+.Python
 
-# Environments
+# Virtual environments
 .env
-.venv
+.venv/
 env/
 venv/
 ENV/
 
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints
+# Tool caches
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 
-# Plot images generated during training (don't upload to web app repo)
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Local Streamlit secrets
+.streamlit/secrets.toml
+
+# Generated plots and reports
 *.png
+Plots/
 
-# Note: We specifically DO NOT ignore *.pkl because Streamlit needs them!
-# Note: We specifically DO NOT ignore Dataset folder in case you want it uploaded.
+# Notes:
+# - Model artifacts (*.pkl) are intentionally tracked because app.py loads them.
+# - Dataset/ is intentionally tracked so the training workflow can run from a fresh clone.

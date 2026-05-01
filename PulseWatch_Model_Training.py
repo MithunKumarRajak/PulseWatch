@@ -2,10 +2,6 @@
 # PulseWatch: A Hybrid Predictive System for Employee Burnout Prediction
 # Name: Mithun Kumar Rajak | Roll No.: 2023BTCSE010 | JLU ID: JLU08355
 # Subject: Machine Learning
-# =============================================================================
-
-# %% [markdown]
-# # PulseWatch: A Hybrid Predictive System for Employee Burnout Prediction
 # Using two datasets: WFH Employee Burnout + Developer Burnout
 
 # %% Cell 1 - Imports
@@ -28,7 +24,6 @@ from xgboost import XGBClassifier
 from imblearn.over_sampling import SMOTE
 
 print("All libraries imported successfully!")
-
 # %% Cell 2 - Load Datasets
 df_wfh = pd.read_csv('./Dataset/wfh_burnout.csv')
 df_dev = pd.read_csv('./Dataset/developer_burnout.csv')

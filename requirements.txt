@@ -6,4 +6,6 @@ xgboost
 imbalanced-learn
 shap
 matplotlib
+seaborn
+notebook
 joblib
