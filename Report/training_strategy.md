@@ -15,6 +15,7 @@ Phase 3 → Combine via Hybrid Ensemble (matches your project title)
 ## 📋 Available Features After Removing Leakage
 
 ### WFH Dataset (after dropping leaky + ID columns)
+
 ```
 Features (6):  work_hours, screen_time_hours, meetings_count, 
                breaks_taken, after_hours_work, sleep_hours, day_type
@@ -23,6 +24,7 @@ Usable rows:   1,800
 ```
 
 ### Developer Dataset (after dropping leaky column)
+
 ```
 Features (10): age, experience_years, daily_work_hours, sleep_hours,
                caffeine_intake, bugs_per_day, commits_per_day,
@@ -36,9 +38,10 @@ Usable rows:   ~6,860 (after dropping nulls)
 
 ---
 
-## 🏆 Three Training Approaches (Best → Good)
+## Three Training Approaches (Best → Good)
 
 ### Approach 1: Hybrid Ensemble ⭐ RECOMMENDED
+>
 > *Best accuracy + matches your "Hybrid Predictive System" title*
 
 ```
@@ -59,6 +62,7 @@ Usable rows:   ~6,860 (after dropping nulls)
 ```
 
 **Why this is best:**
+
 - Each model learns domain-specific patterns
 - No feature alignment issues — each model uses ALL its dataset's features
 - Ensemble reduces overfitting
@@ -67,9 +71,11 @@ Usable rows:   ~6,860 (after dropping nulls)
 ---
 
 ### Approach 2: Combined Common-Feature Model
+>
 > *Simpler, larger dataset, fewer features*
 
 Use only the 4 shared features across both datasets:
+
 ```
 work_hours, sleep_hours, meetings, screen_time → burnout_level
 ```
@@ -80,6 +86,7 @@ work_hours, sleep_hours, meetings, screen_time → burnout_level
 ---
 
 ### Approach 3: Developer-Only Model
+>
 > *Best single-model performance*
 
 Train only on the developer dataset (10 features, ~6,860 rows).
@@ -110,7 +117,8 @@ Train only on the developer dataset (10 features, ~6,860 rows).
 > [!WARNING]
 > Do NOT use plain **accuracy** — it will be misleading due to class imbalance (WFH dataset is 85% "Low").
 
-### Use These Metrics Instead:
+### Use These Metrics Instead
+
 ```python
 from sklearn.metrics import (
     classification_report,      # Precision, Recall, F1 per class
@@ -122,7 +130,8 @@ from sklearn.metrics import (
 )
 ```
 
-### Comparison Table Format:
+### Comparison Table Format
+
 ```
 Model              Accuracy   Balanced-Acc   F1-Macro   Precision   Recall
 ─────────────────────────────────────────────────────────────────────────

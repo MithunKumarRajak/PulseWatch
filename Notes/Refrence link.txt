@@ -1,22 +1,22 @@
 #Refrence:
-
+1
 Work_From_Home_Burnout_Score_Prediction:
-https://www.kaggle.com/code/akshwint/work-from-home-burnout-score-prediction
+https://www.kaggle.com/code/akshwint/work-from-home-burnout-score-prediction   (Deep learning model used here)
 
-
+2
 Work_From_Home_Burnout_Score_Prediction:
-https://www.kaggle.com/code/smartestnerdfromtown/work-from-home-employee-burnout
+https://www.kaggle.com/code/smartestnerdfromtown/work-from-home-employee-burnout    (burnout_risk — categorical prediction used here)
 
 As_FeatureSelection: 
-https://www.kaggle.com/code/pitchayapak001/as-featureselection
+https://www.kaggle.com/code/pitchayapak001/as-featureselection    (same jusr above dataset for feature selection , there is most of records in the lows category )
 
-
+3
 WorkFromHome_With_Various_Model:
-https://www.kaggle.com/code/shagunsangwan/workfromhome-with-various-model
+https://www.kaggle.com/code/shagunsangwan/workfromhome-with-various-model (Both categorical and regression model implementede , first burnout score (regression predicted and converted into categorical ))
 
-
+4
 Linear,Ridge,Lasso Regression:
-https://www.kaggle.com/code/aligndzz/linear-ridge-lasso-regression
+https://www.kaggle.com/code/aligndzz/linear-ridge-lasso-regression (same as just above numerical with 5 categorical model)
 
 
 
