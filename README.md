@@ -42,7 +42,13 @@ streamlit run app.py
 
 ## Tech Stack
 
-**Frontend:** Streamlit · **ML:** XGBoost, Ensemble Voting (LR + ExtraTrees + SVC), CatBoost · **Preprocessing:** scikit-learn · **Deployment:** Streamlit Cloud
+**Frontend:** Streamlit 
+
+· **ML:** XGBoost, Ensemble Voting (LR + ExtraTrees + SVC), CatBoost 
+
+· **Preprocessing:** scikit-learn 
+
+· **Deployment:** Streamlit Cloud
 
 ---
 
