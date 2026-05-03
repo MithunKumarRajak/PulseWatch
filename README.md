@@ -8,7 +8,7 @@
 
 <br/>
 
-<img src="assets/app_screenshot.png" alt="PulseWatch Dashboard" width="720"/>
+![PulseWatch Dashboard](assets/app_screenshot.png)
 
 </div>
 
