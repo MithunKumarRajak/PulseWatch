@@ -6,7 +6,7 @@ import numpy as np
 import streamlit as st
 
 
-st.set_page_config(page_title="Burnout Predictor", page_icon="🔥", layout="centered")
+st.set_page_config(page_title="Burnout Predictor", page_icon="", layout="centered")
 
 
 def load_model(path: str) -> Optional[object]:
@@ -63,7 +63,7 @@ def load_models_for_wfh():
 
 
 def render_developer_tab():
-    st.header("💻 Developer Burnout")
+    st.header("Developer Burnout")
     col1, col2 = st.columns(2)
 
     with col1:
@@ -87,7 +87,7 @@ def render_developer_tab():
     sleep_deficit = max(0.0, 8.0 - sleep_hours)
     total_digital_load = daily_work_hours + screen_time + meetings_per_day
 
-    with st.expander("📐 Engineered Features (auto-calculated)"):
+    with st.expander(" Engineered Features (auto-calculated)"):
         st.write({
             "bugs_per_commit": round(bugs_per_commit, 3),
             "work_sleep_ratio": round(work_sleep_ratio, 3),
@@ -174,7 +174,7 @@ def render_developer_tab():
 
 
 def render_wfh_tab():
-    st.header("🏠 WFH Employee Burnout")
+    st.header("WFH Employee Burnout")
     col1, col2 = st.columns(2)
 
     with col1:
@@ -197,7 +197,7 @@ def render_wfh_tab():
     workload = work_hours + meetings_count + screen_time_hours
     sleep_deficit = max(0.0, 8.0 - sleep_hours)
 
-    with st.expander("📐 Engineered Features (auto-calculated)"):
+    with st.expander("Engineered Features (auto-calculated)"):
         st.write({
             "productivity_per_hour": round(productivity_per_hour, 3),
             "workload": round(workload, 3),
@@ -209,15 +209,15 @@ def render_wfh_tab():
     r_model, c_model, r_scaler, c_scaler = load_models_for_wfh()
     models_present = all([r_model, c_model, r_scaler, c_scaler])
     if not models_present:
-        st.warning("⚠️ Model file not found. Please train and save the model first.")
+        st.warning("Model file not found. Please train and save the model first.")
 
     sleep_zero = sleep_hours == 0
     if sleep_zero:
-        st.warning("⚠️ Sleep hours is zero — ratios will be invalid. Please enter a non-zero value.")
+        st.warning("Sleep hours is zero — ratios will be invalid. Please enter a non-zero value.")
 
     predict_disabled = (not models_present) or sleep_zero
 
-    if st.button("🔍 Predict WFH Burnout", disabled=predict_disabled):
+    if st.button("Predict WFH Burnout", disabled=predict_disabled):
         # Order MUST match the DataFrame columns used during training:
         # day_type, work_hours, screen_time_hours, meetings_count,
         # breaks_taken, after_hours_work, sleep_hours,
@@ -278,10 +278,10 @@ def render_wfh_tab():
 
 
 def main():
-    st.markdown("# 🔥 Burnout Prediction Dashboard")
+    st.markdown("# Burnout Prediction Dashboard")
     st.markdown("### Predict burnout risk using Machine Learning")
 
-    tab1, tab2 = st.tabs(["💻 Developer Burnout", "🏠 WFH Employee Burnout"])
+    tab1, tab2 = st.tabs([" Developer Burnout", " WFH Employee Burnout"])
 
     with tab1:
         render_developer_tab()
@@ -290,7 +290,7 @@ def main():
         render_wfh_tab()
 
     st.divider()
-    st.markdown("Built with Streamlit | Models: XGBoost + CatBoost")
+    st.markdown("Built with Streamlit")
 
 
 if __name__ == "__main__":

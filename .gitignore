@@ -19,6 +19,9 @@ ENV/
 .coverage
 htmlcov/
 
+# CatBoost training logs
+catboost_info/
+
 # Editors / OS
 .vscode/
 .idea/
@@ -27,11 +30,3 @@ Thumbs.db
 
 # Local Streamlit secrets
 .streamlit/secrets.toml
-
-# Generated plots and reports
-*.png
-Plots/
-
-# Notes:
-# - Model artifacts (*.pkl) are intentionally tracked because app.py loads them.
-# - Dataset/ is intentionally tracked so the training workflow can run from a fresh clone.
