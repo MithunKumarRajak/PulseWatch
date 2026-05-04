@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔥 PulseWatch
+#  PulseWatch
 
 **A Hybrid Predictive System for Employee Burnout Prediction**
 
